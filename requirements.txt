@@ -1,0 +1,2 @@
+git+https://github.com/dataiku/dataiku-api-client-python.git@12.1.0
+
