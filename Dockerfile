@@ -24,7 +24,7 @@ RUN apt-get update -y && apt-get upgrade -y &&\
 
 COPY requirements.txt /root/requirements.txt
 
-RUN python3 -m pip install --upgrade pip &&\
+RUN python3 -m pip install --upgrade  --no-cache-dir pip &&\
     python3 -m pip install -r --no-cache-dir requirements.txt &&\
     export SED_RANGE="$(($(sed -n '\|enable bash completion in interactive shells|=' /etc/bash.bashrc)+1)),$(($(sed -n '\|enable bash completion in interactive shells|=' /etc/bash.bashrc)+7))" && \
     sed -i -e "${SED_RANGE}"' s/^#//' /etc/bash.bashrc && \
