@@ -1,4 +1,4 @@
-ignores:
+ignored:
   - DL3008
   - DL3009
   - DL3013

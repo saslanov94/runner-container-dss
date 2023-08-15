@@ -3,7 +3,7 @@ FROM ubuntu:22.04
 USER root
 WORKDIR /root
 
-RUN apt update -y && apt upgrade -y &&\
+RUN apt-get update -y && apt-get upgrade -y &&\
         DEBIAN_FRONTEND=noninteractive apt-get -qq -y install --no-install-recommends \
         wget \
         curl \
@@ -25,7 +25,7 @@ RUN apt update -y && apt upgrade -y &&\
 COPY requirements.txt /root/requirements.txt
 
 RUN python3 -m pip install --upgrade pip &&\
-    python3 -m pip install -r requirements.txt &&\
+    python3 -m pip install -r --no-cache-dir requirements.txt &&\
     export SED_RANGE="$(($(sed -n '\|enable bash completion in interactive shells|=' /etc/bash.bashrc)+1)),$(($(sed -n '\|enable bash completion in interactive shells|=' /etc/bash.bashrc)+7))" && \
     sed -i -e "${SED_RANGE}"' s/^#//' /etc/bash.bashrc && \
     unset SED_RANGE
@@ -42,7 +42,7 @@ RUN add-apt-repository -y ppa:git-core/ppa && \
     echo "runner ALL= EXEC: NOPASSWD:ALL" >> /etc/sudoers.d/runner
 
 WORKDIR /home/runner
-ENV HOME /home/runner
+ENV HOME /home/runner-get
 ENV USER runner
 
 USER runner
