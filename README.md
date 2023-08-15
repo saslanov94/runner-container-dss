@@ -1,6 +1,6 @@
 [![Docker Pulls](https://badgen.net/docker/pulls/saslanov/runner-container-dss?icon=docker&label=pulls)](https://hub.docker.com/r/saslanov/runner-container-dss)
 [![Docker Stars](https://badgen.net/docker/stars/saslanov/runner-container-dss?icon=docker&label=stars)](https://hub.docker.com/r/saslanov/runner-container-dss)
-![GHA Workflow](https://github.com/saslanov/runner-container-dss/actions/workflows/build_dss.yaml/badge.svg)
+![GHA Workflow](https://github.com/saslanov94/runner-container-dss/actions/workflows/build_dss.yaml/badge.svg)
 
 # runner-container-dss
 
